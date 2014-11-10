@@ -30,5 +30,15 @@
   <%= @recipe.minutes_to_cook %>
 </p>
 
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@recipe.picture_url, :width => 600) if @recipe.picture.present? %>
+</p>
+
+<div class="field">
+<%= f.label :picture %><br>
+<%= f.file_field :picture %>
+</div>
+
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
